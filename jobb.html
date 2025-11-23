@@ -3,9 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="jobbStyle.css">
     <title>Document</title>
 </head>
 <body>
-    Hejsan
+    <header class="site-nav" role="banner">
+        <div class="nav-inner">
+            <a href="#" class="brand">Rickard Hjerpe</a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+                <span></span>
+            </label>
+            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation">
+                <a href="jobb.html">Projekt</a>
+                <a href="index.html">Om</a>
+                <a href="personligt.html">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project" id="projects">
+        <div class="project-image">
+            <img src="er26.jpg" alt="Project image">
+        </div>
+
+        <div class="project-info">
+            <p class="project-category">Embedded Systems</p>
+            <p class="project-period">Aug 2025 — Pågående</p>
+            <h2 class="project-title">Formula Student - ER26</h2>
+            <p class="project-desc">
+            Vi bygger en eldriven tävlingsbil som vi tävlar med mot andra universitet runtom i Europa. Jag ansvarar för bilens Vehicle Control Unit (VCU), som styr motorns respons baserat på gaspedalens input.
+            </p>
+
+            <a href="#" class="project-link">Se projektet →</a>
+        </div>
+    </section>
+    <section class="project">
+        <div class="project-image">
+            <img src="analys.jpg" alt="Project image">
+        </div>
+
+        <div class="project-info">
+            <p class="project-category">Undervisning</p>
+            <p class="project-period">Nov 2024 — Pågående</p>
+            <h2 class="project-title">Handledare i grundläggande matematisk analys</h2>
+            <p class="project-desc">
+            Jag har varit handledare i kursen Grundläggande Matematisk Analys vid Linköpings Universitet. Mina ansvarsområden inkluderar att hjälpa studenter med deras frågor, leda övningstillfällen och bedöma inlämningsuppgifter.
+            </p>
+
+            <a href="#" class="project-link">Se projektet →</a>
+        </div>
+    </section>
+
+    <section class="project">
+        <div class="project-image">
+            <img src="diskret.jpg" alt="Project image">
+        </div>
+
+        <div class="project-info">
+            <p class="project-category">Undervisning</p>
+            <p class="project-period">Augusti 2025 - Oktober 2025</p>
+            <h2 class="project-title">Mentor i diskret matematik</h2>
+            <p class="project-desc">
+                När jag var mentor i diskret matematik vid Linköpings Universitet, var min huvudsakliga uppgift att inspirera de nya studenterna inom matematiken. Det innebar i huvudsak att hålla genomgångar och hjälpa dem med kluriga matte uppgifter.
+            </p>
+
+            <a href="#" class="project-link">Se projektet →</a>
+        </div>
+    </section>
+    
 </body>
 </html>
