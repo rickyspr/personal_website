@@ -3,28 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="jobbStyle.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="styles/jobbStyle.css">
+    <title>Projekt</title>
 </head>
 <body>
     <header class="site-nav" role="banner">
         <div class="nav-inner">
-            <a href="#" class="brand">Rickard Hjerpe</a>
+            <a href="index.html" class="brand">Rickard Hjerpe</a>
             <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
             <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
                 <span></span>
             </label>
             <nav class="nav-links" role="navigation" aria-label="Huvudnavigation">
+                <a href="utbildning.html">Utbildning</a>
                 <a href="jobb.html">Projekt</a>
-                <a href="index.html">Om</a>
-                <a href="personligt.html">Kontakt</a>
+                <a href="personligt.html">Personligt</a>
             </nav>
         </div>
     </header>
 
     <section class="project" id="projects">
         <div class="project-image">
-            <img src="er26.jpg" alt="Project image">
+            <img src="bilder/er26.jpg" alt="Project image">
         </div>
 
         <div class="project-info">
@@ -35,12 +35,12 @@
             Vi bygger en eldriven tävlingsbil som vi tävlar med mot andra universitet runtom i Europa. Jag ansvarar för bilens Vehicle Control Unit (VCU), som styr motorns respons baserat på gaspedalens input.
             </p>
 
-            <a href="#" class="project-link">Se projektet →</a>
+            <a href="https://liuformulastudent.se" class="project-link">Se projektet →</a>
         </div>
     </section>
     <section class="project">
         <div class="project-image">
-            <img src="analys.jpg" alt="Project image">
+            <img src="bilder/analys.jpg" alt="Project image">
         </div>
 
         <div class="project-info">
@@ -57,7 +57,7 @@
 
     <section class="project">
         <div class="project-image">
-            <img src="diskret.jpg" alt="Project image">
+            <img src="bilder/diskret.jpg" alt="Project image">
         </div>
 
         <div class="project-info">
@@ -72,5 +72,105 @@
         </div>
     </section>
     
+    <section class="project">
+        <div class="project-image">
+            <img src="bilder/Gruppbild.JPG" alt="Project image">
+        </div>
+
+        <div class="project-info">
+            <p class="project-category">SkolKontakt</p>
+            <p class="project-period">Maj 2025 - Pågående</p>
+            <h2 class="project-title">Datateknologsektionens marknadsföringsutskott</h2>
+            <p class="project-desc">
+                Jag är medlem i Datateknologsektionens marknadsföringsutskott, där jag ansvarar för att skapa och hålla kontakten med gymnasieskolor. Mitt mål är att öka engagemanget och synligheten för sektionens utbildningar, främst för gymnasieelever.
+            </p>
+
+            <a href="#" class="project-link">Se projektet →</a>
+        </div>
+    </section>
+    
+        <!-- Contact bubble bottom-left (opens overlay) -->
+        <button class="contact-bubble" id="contact-open" aria-haspopup="dialog" aria-controls="contact-modal" aria-expanded="false">
+                <img src="bilder/kontakt.JPG" alt="Kontakt" />
+        </button>
+
+        <!-- Contact modal overlay -->
+        <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
+                <div class="contact-modal-panel" role="document">
+                        <button class="contact-close" id="contact-close" aria-label="Stäng kontakt">✕</button>
+                        <div class="contact-content">
+                                <h3>Kontakt</h3>
+                                <p><strong>E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
+                                <p><strong>Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
+                                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rickard-hjerpe" target="_blank" rel="noopener">www.linkedin.com/in/rickard-hjerpe</a></p>
+                                <p class="small">Klicka utanför panelen eller tryck Esc för att stänga.</p>
+                        </div>
+                </div>
+        </div>
+
+        <script>
+        (function(){
+            const openBtn = document.getElementById('contact-open');
+            const modal = document.getElementById('contact-modal');
+            const closeBtn = document.getElementById('contact-close');
+            let lastFocused = null;
+
+            function openModal(){
+                lastFocused = document.activeElement;
+                    modal.setAttribute('aria-hidden','false');
+                    openBtn.setAttribute('aria-expanded','true');
+                    document.body.style.overflow = 'hidden';
+                    document.addEventListener('focus', trapFocus, true);
+
+                    // If user prefers reduced motion, skip animation
+                    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                    if(prefersReduced){
+                        panel.style.transition = 'none';
+                        panel.style.transform = '';
+                        panel.style.opacity = '1';
+                        closeBtn.focus();
+                        return;
+                    }
+
+                    // force reflow then animate to final state with overshoot
+                    requestAnimationFrame(()=>{
+                        panel.style.transition = '';
+                        panel.style.transform = 'scale(1.02)';
+                        panel.style.opacity = '1';
+                        setTimeout(()=>{
+                            panel.style.transform = 'scale(1)';
+                        }, 160);
+                        // set focus after animation
+                        setTimeout(()=> closeBtn.focus(), 260);
+                    });
+            }
+
+            function closeModal(){
+                modal.setAttribute('aria-hidden','true');
+                openBtn.setAttribute('aria-expanded','false');
+                document.body.style.overflow = '';
+                if(lastFocused) lastFocused.focus();
+                document.removeEventListener('focus', trapFocus, true);
+            }
+
+            function trapFocus(e){
+                if(!modal.contains(e.target)){
+                    e.stopPropagation();
+                    closeBtn.focus();
+                }
+            }
+
+            openBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', function(e){
+                if(e.target === modal) closeModal();
+            });
+
+            document.addEventListener('keydown', function(e){
+                if(e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false') closeModal();
+            });
+        })();
+        </script>
 </body>
 </html>

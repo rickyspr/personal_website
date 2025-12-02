@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.name-overlay {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  text-shadow: 0 0 15px black;
+  z-index: 10;
+  pointer-events: none;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 25px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  flex-wrap: nowrap; /* horisontellt som default */
+}
+
+/* Paneler */
+.panel {
+  flex: 1;
+  display: flex;
+  justify-content: center; /* horisontell centrering */
+  align-items: flex-start; /* flyttar innehållet uppåt */
+  padding-top: 150px; /* justerar hur högt texten sitter */
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  transition: flex 0.5s ease, transform 0.5s ease;
+  background-size: cover;
+  background-position: center;
+  cursor: pointer;
+  position: relative;
+}
+
+/* Border mellan paneler */
+.panel:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 3px;
+  height: 100%;
+  background: rgba(255,255,255,0.5);
+}
+
+/* Bakgrundsbilder */
+.panel1 { background-image: url('../bilder/skola.jpg'); }
+.panel2 { background-image: url('../bilder/work.png'); }
+.panel3 { background-image: url('../bilder/kontakt.JPG'); }
+
+.panel:hover {
+  flex: 2;
+  transform: scale(1.05);
+}
+
+.panel h2 {
+  margin: 0;
+  text-shadow: 0 0 20px rgba(0,0,0,0.7);
+}
+
+/* RESPONSIVT: mindre skärmar */
+@media (max-width: 900px) {
+  .container {
+    flex-direction: column; /* stapla paneler vertikalt */
+    height: auto; /* höjden bestäms av panelerna */
+  }
+
+  .panel {
+    width: 100%;
+    flex: none; /* ta bort flex-expansion på hover */
+    min-height: 33vh;
+  }
+
+  .panel:hover {
+    transform: scale(1.02); /* liten zoom-effekt istället */
+  }
+
+  /* Border anpassning för vertikal layout */
+  .panel:not(:last-child)::after {
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    top: auto;
+    right: 0;
+  }
+
+  .name-overlay {
+    font-size: 2.5rem;
+    padding: 8px 20px;
+  }
+
+  .panel h2 {
+    font-size: 1.5rem;
+  }
+}
+
+/* RESPONSIVT: riktigt små skärmar */
+@media (max-width: 500px) {
+  .name-overlay {
+    font-size: 2rem;
+    padding: 6px 15px;
+  }
+
+  .panel h2 {
+    font-size: 1.2rem;
+  }
+}

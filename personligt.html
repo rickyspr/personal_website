@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/personligt.css">
+    <title>Personligt</title>
+</head>
+
+<body>
+    <header class="site-nav" role="banner">
+        <div class="nav-inner">
+            <a href="index.html" class="brand">Rickard Hjerpe</a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+                <span></span>
+            </label>
+            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation">
+                <a href="utbildning.html">Utbildning</a>
+                <a href="jobb.html">Projekt</a>
+                <a href="personligt.html">Personligt</a>
+            </nav>
+        </div>
+    </header>
+
+
+
+    <!-- INTRO SEKTION -->
+    <section class="personal-hero">
+        <img src="bilder/kontakt.JPG" alt="Rickard" class="hero-image">
+        <div class="hero-text">
+            <h1>Vem är jag?</h1>
+            <p>
+                Jag heter Rickard och är en teknikintresserad student som gillar att skapa saker –
+                allt från elbilar och spel till hemsidor. Jag gillar utmaningar,
+                struktur, kreativitet och att alltid lära mig något nytt.
+            </p>
+        </div>
+    </section>
+
+
+
+    <!-- INTRESSEN -->
+    <section class="personal-section">
+        <h2>Mina intressen</h2>
+        <div class="personal-grid">
+
+            <div class="personal-card">
+                <img src="bilder/run.jpg" alt="Running image">
+                <h3>Löpning & träning</h3>
+                <p>
+                    Jag springer 5–10 km regelbundet och siktar på mitt första maraton. 
+                    Träningen håller mig pigg, glad och fokuserad.
+                </p>
+            </div>
+
+            <div class="personal-card">
+                <img src="bilder/skis.jpg" alt="Skiing image">
+                <h3>Skidor</h3>
+                <p>
+                    Jag älskar att åka skidor med mina kompisar – helst i Alperna eller Åre.
+                </p>
+            </div>
+
+            <div class="personal-card">
+                <img src="bilder/electronics.png" alt="Electronics image">
+                <h3>Nörda</h3>
+                <p>
+                    Jag gillar att skapa olika saker, vare sig det är spel, hemsidor eller elektronikprojekt.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- FAVORITER / FUN FACTS -->
+    <section class="personal-section">
+        <h2>Favoriter:</h2>
+
+        <ul class="favorites-list">
+            <li><strong>Stad:</strong> Prague 🇨🇿</li>
+            <li><strong>Mat:</strong> Pasta pesto (snabb + studentvänlig)</li>
+            <li><strong>Film:</strong> Will Hunting</li>
+            <li><strong>Programmeringsspråk:</strong> C++ (Såklart 😄)</li>
+        </ul>
+    </section>
+
+
+
+    <!-- MÅL -->
+    <section class="personal-section">
+        <h2>Mål just nu</h2>
+        <div class="goals">
+
+            <div class="goal">
+                <h3>🏃 Springa ett maraton</h3>
+                <p>Jag tränar inför att springa <b>ADIDAS STOCKHOLM MARATHON 2026</b>.</p>
+            </div>
+
+            <div class="goal">
+                <h3>🎓 Civilingenjörexamen</h3>
+                <p>Med fokus på matematik, programmering och datateknik.</p>
+            </div>
+
+            <div class="goal">
+                <h3>🌍 Plugga utomlands</h3>
+                <p>Jag drömmer om att studera en termin i ett annat land, gärna i Europa. Tror det skulle vara mycket lärorikt och en fantastisk upplevelse.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!-- Kontakt-bubbla -->
+    <button class="contact-bubble" id="contact-open" aria-haspopup="dialog" aria-controls="contact-modal" aria-expanded="false">
+        <img src="bilder/kontakt.JPG" alt="Kontakt"/>
+    </button>
+
+    <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="contact-modal-panel" role="document">
+            <button class="contact-close" id="contact-close" aria-label="Stäng kontakt">✕</button>
+            <div class="contact-content">
+                <h3>Kontakt</h3>
+                    <p><strong>E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
+                    <p><strong>Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
+                    <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rickard-hjerpe" target="_blank" rel="noopener">www.linkedin.com/in/rickard-hjerpe</a></p>
+                <p class="small">Klicka utanför panelen eller tryck Esc för att stänga.</p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal Script (samma som ditt) -->
+    <script>
+        (function(){
+            const openBtn = document.getElementById('contact-open');
+            const modal = document.getElementById('contact-modal');
+            const closeBtn = document.getElementById('contact-close');
+            const panel = modal.querySelector('.contact-modal-panel');
+            let lastFocused = null;
+
+            function openModal(){
+                lastFocused = document.activeElement;
+                modal.setAttribute('aria-hidden','false');
+                openBtn.setAttribute('aria-expanded','true');
+                document.body.style.overflow = 'hidden';
+                document.addEventListener('focus', trapFocus, true);
+
+                const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if(prefersReduced){
+                    panel.style.transition = 'none';
+                    panel.style.opacity = '1';
+                    closeBtn.focus();
+                    return;
+                }
+
+                requestAnimationFrame(()=>{
+                    panel.style.opacity = '1';
+                    panel.style.transform = 'scale(1)';
+                    setTimeout(()=> closeBtn.focus(), 260);
+                });
+            }
+
+            function closeModal(){
+                modal.setAttribute('aria-hidden','true');
+                openBtn.setAttribute('aria-expanded','false');
+                document.body.style.overflow = '';
+                if(lastFocused) lastFocused.focus();
+                document.removeEventListener('focus', trapFocus, true);
+            }
+
+            function trapFocus(e){
+                if(!modal.contains(e.target)){
+                    e.stopPropagation();
+                    closeBtn.focus();
+                }
+            }
+
+            openBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+
+            modal.addEventListener('click', (e)=>{
+                if(e.target === modal) closeModal();
+            });
+
+            document.addEventListener('keydown', (e)=>{
+                if(e.key === 'Escape' && modal.getAttribute('aria-hidden') === 'false'){
+                    closeModal();
+                }
+            });
+        })();
+    </script>
+</body>
+</html>
