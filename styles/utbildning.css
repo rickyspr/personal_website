@@ -217,7 +217,7 @@
   }
 }
 
-/* Contact bubble (fixed bottom-left) */
+/* Contact bubble (fixed bottom-right) */
 .contact-bubble {
   position: fixed;
   right: 18px;

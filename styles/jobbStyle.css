@@ -220,7 +220,7 @@
 /* ===========================
    KONTAKT-BUBBLA
 =========================== */
-/* Contact bubble (fixed bottom-left) */
+/* Contact bubble (fixed bottom-right) */
 .contact-bubble {
   position: fixed;
   right: 18px;
@@ -247,7 +247,7 @@
 }
 
 @media (max-width: 420px) {
-  .contact-bubble { width: 48px; height: 48px; left: 12px; bottom: 12px; }
+  .contact-bubble { width: 48px; height: 48px; right: 12px; bottom: 12px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
