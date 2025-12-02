@@ -344,6 +344,8 @@
     width: 100%;
     max-width: 600px;
     margin: 20px 0;
+    overflow-x: auto; /* Gör tabellen scrollbar på små skärmar */
+    -webkit-overflow-scrolling: touch; /* mjuk scroll på iOS */
 }
 
 /* Toggle-knapp */
@@ -384,22 +386,43 @@
     border-radius: 6px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    table-layout: auto; /* gör kolumner flexibla */
 }
 
+/* Header */
 .styled-table thead {
     background-color: #4c74ff;
     color: white;
 }
 
-.styled-table th, .styled-table td {
+/* Celler */
+.styled-table th,
+.styled-table td {
     padding: 12px 15px;
     border-bottom: 1px solid #ddd;
+    word-break: break-word; /* bryt långa ord */
 }
 
+/* Sista raden */
 .styled-table tbody tr:last-child td {
     border-bottom: none;
 }
 
+/* Hover */
 .styled-table tbody tr:hover {
     background-color: #f5f7ff;
+}
+
+/* --- Mobilanpassning --- */
+@media (max-width: 480px) {
+    .styled-table th,
+    .styled-table td {
+        padding: 8px 10px;
+        font-size: 14px;
+    }
+
+    .dropdown-container {
+        max-width: 100%;
+        margin: 12px 0;
+    }
 }
