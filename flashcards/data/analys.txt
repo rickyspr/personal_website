@@ -1,0 +1,20 @@
+Derivatan av $x^n$;$nx^{n-1}$
+Derivatan av $e^x$;$e^x$
+Derivatan av $\ln(x)$;$\frac{1}{x}$
+Derivatan av $\sin(x)$;$\cos(x)$
+Derivatan av $\cos(x)$;$-\sin(x)$
+Derivatan av $a^x$;$a^x \ln(a)$
+Derivatan av $\tan(x)$;$1 + \tan^2(x)$
+Derivatan av $\frac{1}{x}$;$-\frac{1}{x^2}$
+Derivatan av $\sqrt{x}$;$\frac{1}{2\sqrt{x}}$
+Produktregeln $(uv)'$;$u'v + uv'$
+Kvotregeln $(\frac{u}{v})'$;$\frac{u'v - uv'}{v^2}$
+Kedjeregeln $f(g(x))'$;$f'(g(x)) \cdot g'(x)$
+Definition av derivata;$\lim_{h \to 0} \frac{f(x+h) - f(x)}{h}$
+Integralen av $x^n$;$\frac{x^{n+1}}{n+1} + C$
+Integralen av $\frac{1}{x}$;$\ln|x| + C$
+Integralen av $e^{ax}$;$\frac{e^{ax}}{a} + C$
+Integralen av $\sin(ax)$;$-\frac{\cos(ax)}{a} + C$
+Partiell integration $\int u v'$;$uv - \int u'v$
+Integralkalkylens fundamentalsats;$\int_a^b f(x)dx = F(b) - F(a)$
+Stationär punkt;$f'(x) = 0$

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matte Flashcards Pro</title>
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+</head>
+<body>
+
+    <div id="home-screen" class="screen">
+        <h1>Matte Flashcards</h1>
+        <p>Välj ett ämne att träna på:</p>
+        <div class="category-grid">
+            <button class="category-btn" onclick="startTraining('satser')">Satser</button>
+            <button class="category-btn" onclick="startTraining('def')">Definitioner</button>
+            <button class="category-btn" onclick="startTraining('algebra')">Algebra & Regler</button>
+        </div>
+    </div>
+
+    <div id="training-screen" class="screen" style="display: none;">
+        <button class="btn-home" onclick="goHome()">🏠 Hem</button>
+
+        <div class="controls">
+            <div class="toggle-group">
+                <span>Linjär</span>
+                <label class="switch">
+                    <input type="checkbox" id="randomToggle" onchange="resetRound()">
+                    <span class="slider"></span>
+                </label>
+                <span>Slump</span>
+            </div>
+            <div class="toggle-group">
+                <span>Fråga</span>
+                <label class="switch">
+                    <input type="checkbox" id="sideToggle" onchange="updateCardDisplay()">
+                    <span class="slider"></span>
+                </label>
+                <span>Svar</span>
+            </div>
+            <button onclick="resetRound()" class="btn-reset">Starta om</button>
+        </div>
+
+        <div id="stats">Kort kvar: <span id="cards-left">0</span></div>
+
+        <div class="flashcard-container" id="cardContainer">
+            <div class="flashcard" id="card">
+                <div class="card-face card-front">
+                    <span class="label" id="frontLabel">Fråga</span>
+                    <div id="frontText" class="math-content"></div>
+                </div>
+                <div class="card-face card-back">
+                    <span class="label" id="backLabel">Svar</span>
+                    <div id="backText" class="math-content"></div>
+                </div>
+            </div>
+        </div>
+
+        <div id="feedback-controls" class="feedback-btns" style="visibility: hidden;">
+            <button class="btn btn-wrong" onclick="handleFeedback(false)">Jag hade fel</button>
+            <button class="btn btn-right" onclick="handleFeedback(true)">Jag hade rätt</button>
+        </div>
+    </div>
+
+    <button class="add-set-btn" onclick="openModal()">+</button>
+
+    <div id="custom-modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <h2>Skapa eget set</h2>
+            <p class="hint">Format: <strong>Fråga;Svar</strong> (en per rad)</p>
+            <textarea id="custom-data" rows="10" placeholder="Gränsvärde;$\lim_{x \to a} f(x) = L$"></textarea>
+            <button class="btn btn-right" onclick="saveCustomSet()" style="width: 100%; margin-top: 10px;">Börja öva</button>
+        </div>
+    </div>
+
+    <div id="finish-screen" class="finish-overlay" style="display: none;">
+        <h2>Rundan klar! 🏆</h2>
+        <button class="btn btn-right" onclick="resetRound()">Kör igen</button>
+        <button class="btn-reset" style="margin-top:10px" onclick="goHome()">Tillbaka hem</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
