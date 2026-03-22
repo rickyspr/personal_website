@@ -50,3 +50,19 @@ muteBtn.addEventListener('click', () => {
         muteBtn.innerHTML = lastVol < 0.5 ? '🔉' : '🔊';
     }
 });
+
+// Hämta rullgardinsmenyn
+const stationSelect = document.getElementById('station-select');
+
+// Lyssna på när användaren väljer en ny station
+stationSelect.addEventListener('change', (e) => {
+    // 1. Ändra källan (src) på ljudet till det valet man klickade på
+    radioAudio.src = e.target.value;
+    
+    // 2. Ladda den nya strömmen och börja spela direkt
+    radioAudio.load(); 
+    radioAudio.play();
+    
+    // 3. Se till att knappen visar "Pausa" eftersom vi startade musiken
+    playBtn.innerHTML = '⏸️ Pausa';
+});
