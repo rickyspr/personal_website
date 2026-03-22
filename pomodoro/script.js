@@ -3,7 +3,16 @@
 // För produktion: 'https://grupp-pomodoro-server.onrender.com'
 const SERVER_URL = 'https://grupp-pomodoro-server.onrender.com';
 
-const socket = io(SERVER_URL);
+const socket = io(SERVER_URL, {
+    reconnection: true,
+    reconnectionDelay: 1000,
+    reconnectionDelayMax: 5000,
+    reconnectionAttempts: Infinity,
+    pingInterval: 3000,   // Ping var 3:e sekund (mycket kort för att undvika proxy timeout)
+    pingTimeout: 5000,    // Timeout efter 5s utan pong
+    transports: ['websocket', 'polling'],  // Försök WebSocket först, sedan polling
+    upgrade: true
+});
 
 const roomInput = document.getElementById('room-input');
 const joinBtn = document.getElementById('join-btn');
@@ -21,6 +30,22 @@ let currentRoom = '';
 let timerInterval;
 let currentFocusDuration = 25;
 let currentBreakDuration = 5;
+let keepaliveInterval; // Spåra keepalive-intervallet
+
+// Starta keepalive-mekanismen med HTTP-fetch för att undvika Renders 15-minuters sleep
+function startKeepAlive() {
+    if (keepaliveInterval) clearInterval(keepaliveInterval);
+    
+    // Kör ett HTTP-anrop var 10:e minut (600000 ms)
+    keepaliveInterval = setInterval(() => {
+        fetch(`${SERVER_URL}/ping`)
+            .then(response => console.log('Pingad Render-server för att hålla den vaken!'))
+            .catch(error => console.error('Ping misslyckades:', error));
+    }, 600000); 
+}
+
+// Starta keepalive direkt när skriptet laddas
+startKeepAlive();
 
 joinBtn.addEventListener('click', () => {
     currentRoom = roomInput.value;
@@ -116,4 +141,34 @@ socket.on('timer-started', (data) => {
             document.title = `${timeString} - ${modeText}`; 
         }
     }, 1000);
+});
+
+// Error-handling för server-problem
+socket.on('error', (errorMessage) => {
+    console.error('Server-fel:', errorMessage);
+    startBtn.disabled = false;
+    alert('Serverfel: ' + errorMessage);
+});
+
+// Hantera connection-problem
+socket.on('connect_error', (error) => {
+    console.error('Connection-fel:', error);
+    startBtn.disabled = true;
+    modeDisplay.innerText = '❌ Ingen connection till server';
+});
+
+socket.on('disconnect', () => {
+    clearInterval(timerInterval);
+    startBtn.disabled = true;
+    modeDisplay.innerText = '❌ Frånkopplad från server';
+});
+
+socket.on('reconnect', () => {
+    if (currentRoom) {
+        socket.emit('join-room', currentRoom);
+        modeDisplay.innerText = '✅ Återansluten!';
+    }
+    
+    // Säkerställ att HTTP-keepalive rullar på när vi återansluter
+    startKeepAlive();
 });
