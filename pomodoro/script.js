@@ -25,6 +25,7 @@ const focusDurationInput = document.getElementById('focus-duration');
 const breakDurationInput = document.getElementById('break-duration');
 const settingsToggle = document.getElementById('settings-toggle');
 const settingsContent = document.getElementById('settings-content');
+const motivationDisplay = document.getElementById('motivation-display');
 
 let currentRoom = '';
 let timerInterval;
@@ -99,6 +100,7 @@ socket.on('timer-stopped', (data) => {
 });
 
 socket.on('timer-started', (data) => {
+    console.log("Detta kom från servern:", data);
     clearInterval(timerInterval);
     startBtn.disabled = true;
 
@@ -176,4 +178,3 @@ socket.on('reconnect', () => {
     startKeepAlive();
 });
 
-const motivationDisplay = document.getElementById('motivation-display');
