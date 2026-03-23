@@ -101,6 +101,9 @@ socket.on('timer-stopped', (data) => {
 socket.on('timer-started', (data) => {
     clearInterval(timerInterval);
     startBtn.disabled = true;
+
+    // Visar motiverande quote
+    motivationDisplay.innerText = data.motivation || "Gemensam Tidshantering för Grupper";
     
     const modeText = data.mode === 'focus' ? 'Fokus' : 'Rast';
 
@@ -172,3 +175,5 @@ socket.on('reconnect', () => {
     // Säkerställ att HTTP-keepalive rullar på när vi återansluter
     startKeepAlive();
 });
+
+const motivationDisplay = document.getElementById('motivation-display');
