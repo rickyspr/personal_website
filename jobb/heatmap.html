@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/projects.css">
+    <title>Projekt - Urban Intelligence</title>
+</head>
+<body>
+    <header class="site-nav" role="banner">
+        <div class="nav-inner">
+            <a href="../index.html" class="brand">Rickard Hjerpe</a>
+            <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle navigation">
+            <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
+                <span></span>
+            </label>
+            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation">
+                <a href="../utbildning.html">Utbildning</a>
+                <a href="../jobb.html">Jobb</a>
+                <a href="../personligt.html">Personligt</a>
+                <a href="../pomodoro.html">Min pomodoro timer</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="project">
+        <div class="project-image">
+            <img src="../bilder/heatmap/cafe_stockholm_no_nodes.png" alt="Heatmap visualisering i React">
+        </div>
+        <div class="project-info">
+            <h2 class="project-title">Urban Intelligence: Frontend & Heatmaps</h2>
+            <p class="project-desc">
+                Grunden i projektet är en interaktiv webbapplikation byggd i <strong>React</strong>. För att visualisera densiteten av tjänster i en stad implementerade jag <strong>Leaflet.heat</strong>. Utmaningen här låg i att skapa en dynamisk heatmap där "intensiteten" (max-värdet) automatiskt anpassas baserat på mängden data som returneras, vilket säkerställer att kartan förblir läsbar oavsett om man söker i en småstad eller i New York.
+            </p>
+        </div>
+    </section>
+
+    <section class="project">
+        <div class="project-image">
+            <img src="../bilder/heatmap/code.png" alt="Python Flask Backend kod">
+        </div>
+        <div class="project-info">
+            <h2 class="project-title">Python Backend & Overpass API</h2>
+            <p class="project-desc">
+                Backenden drivs av <strong>Flask</strong> och agerar brygga mellan användaren och <strong>OpenStreetMaps Overpass API</strong>. Jag utvecklade en motor som bygger dynamiska queries för att hämta spatial data (noder och vägar) baserat på Area ID och specifika taggar. För att optimera prestandan hanteras koordinattransformationer och datatvätt direkt på servern innan resultatet skickas till klienten.
+            </p>
+        </div>
+    </section>
+
+    <section class="project">
+        <div class="project-image">
+            <img src="../bilder/heatmap/cafe_stockholm.png" alt="DBSCAN klustring av koordinater">
+        </div>
+        <div class="project-info">
+            <h2 class="project-title">Mönsterigenkänning med DBSCAN</h2>
+            <p class="project-desc">
+                För att gå bortom enkel visualisering integrerade jag maskininlärning i form av <strong>DBSCAN-algoritmen</strong> (via Scikit-learn). Genom att analysera GPS-koordinater i radianer kan systemet identifiera kluster med godtyckliga former – perfekt för att upptäcka linjära mönster som "bargator". Detta tillåter appen att automatiskt skilja på brus (enstaka ställen) och faktiska koncentrerade intresseområden.
+            </p>
+        </div>
+    </section>
+
+    <section class="project">
+        <div class="project-image">
+            <img src="../bilder/heatmap/DBSCAN.png" alt="Sökresultat med gatunamn">
+        </div>
+        <div class="project-info">
+            <h2 class="project-title">Reverse Geocoding & Interaktivitet</h2>
+            <p class="project-desc">
+                För att göra datan begriplig för användaren implementerades en modul för <strong>Reverse Geocoding</strong> med Nominatim. Varje matematiskt kluster översätts till ett faktiskt gatunamn eller stadsdel. Slutresultatet är en klickbar lista där användaren kan "flyga" (map.flyTo) till de hetaste områdena, vilket skapar en sömlös koppling mellan rådata, algoritm och användargränssnitt.
+            </p>
+        </div>
+    </section>
+
+    <button class="contact-bubble" id="contact-open" aria-haspopup="dialog" aria-controls="contact-modal" aria-expanded="false">
+            <img src="../bilder/kontakt.JPG" alt="Kontakt" />
+    </button>
+    <div class="contact-tooltip" id="contact-tooltip">Säg hej!</div>
+
+    <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
+            <div class="contact-modal-panel" role="document">
+                    <button class="contact-close" id="contact-close" aria-label="Stäng kontakt">✕</button>
+                    <div class="contact-content">
+                            <h3>Kontakt</h3>
+                            <p><strong>E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
+                            <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rickard-hjerpe" target="_blank">www.linkedin.com/in/rickard-hjerpe</a></p>
+                    </div>
+            </div>
+    </div>
+
+    <script>
+        // Samma script som tidigare för att hantera kontakt-modalen
+        (function(){
+            const openBtn = document.getElementById('contact-open');
+            const modal = document.getElementById('contact-modal');
+            const closeBtn = document.getElementById('contact-close');
+            const panel = modal.querySelector('.contact-modal-panel');
+            
+            function openModal(){
+                modal.setAttribute('aria-hidden','false');
+                document.body.style.overflow = 'hidden';
+                requestAnimationFrame(()=>{
+                    panel.style.opacity = '1';
+                    panel.style.transform = 'scale(1)';
+                });
+            }
+
+            function closeModal(){
+                modal.setAttribute('aria-hidden','true');
+                document.body.style.overflow = '';
+            }
+
+            openBtn.addEventListener('click', openModal);
+            closeBtn.addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+        })();
+    </script>
+</body>
+</html>
