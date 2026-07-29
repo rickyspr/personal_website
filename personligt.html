@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/personligt.css">
-    <title>Personligt</title>
+    <link rel="stylesheet" href="styles/i18n.css">
+    <title data-i18n="title.personal">Personligt</title>
 </head>
 
 <body>
@@ -15,12 +16,17 @@
             <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
                 <span></span>
             </label>
-            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation">
-                <a href="utbildning.html">Utbildning</a>
-                <a href="jobb.html">Jobb</a>
-                <a href="personligt.html">Personligt</a>
-                <a href="pomodoro.html">Min pomodoro timer</a>
+            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation" data-i18n-attr="aria-label:nav.ariaLabel">
+                <a href="utbildning.html" data-i18n="nav.education">Utbildning</a>
+                <a href="jobb.html" data-i18n="nav.work">Jobb</a>
+                <a href="personligt.html" data-i18n="nav.personal">Personligt</a>
+                <a href="pomodoro.html" data-i18n="nav.pomodoro">Min pomodoro timer</a>
             </nav>
+            <button class="lang-toggle" id="lang-toggle" role="switch" aria-checked="false" aria-label="Byt språk / Switch language">
+                <span class="lang-opt" data-lang="sv">SV</span>
+                <span class="lang-opt" data-lang="en">EN</span>
+                <span class="lang-thumb" aria-hidden="true"></span>
+            </button>
         </div>
     </header>
 
@@ -30,8 +36,8 @@
     <section class="personal-hero">
         <img src="bilder/kontakt.JPG" alt="Rickard" class="hero-image">
         <div class="hero-text">
-            <h1>Vem är jag?</h1>
-            <p>
+            <h1 data-i18n="pers.heroTitle">Vem är jag?</h1>
+            <p data-i18n="pers.heroDesc">
                 Jag heter Rickard och är en teknikintresserad student som gillar att skapa saker –
                 allt från elbilar och spel till hemsidor. Jag gillar utmaningar,
                 struktur, kreativitet och att alltid lära mig något nytt.
@@ -43,30 +49,30 @@
 
     <!-- INTRESSEN -->
     <section class="personal-section">
-        <h2>Mina intressen</h2>
+        <h2 data-i18n="pers.interestsTitle">Mina intressen</h2>
         <div class="personal-grid">
 
             <div class="personal-card">
                 <img src="bilder/run.jpg" alt="Running image">
-                <h3>Löpning & träning</h3>
-                <p>
-                    Jag springer 5–10 km regelbundet och siktar på mitt första maraton. 
+                <h3 data-i18n="pers.card1.title">Löpning & träning</h3>
+                <p data-i18n="pers.card1.desc">
+                    Jag springer 5–10 km regelbundet och siktar på mitt första maraton.
                     Träningen håller mig pigg, glad och fokuserad.
                 </p>
             </div>
 
             <div class="personal-card">
                 <img src="bilder/skis.jpg" alt="Skiing image">
-                <h3>Skidor</h3>
-                <p>
+                <h3 data-i18n="pers.card2.title">Skidor</h3>
+                <p data-i18n="pers.card2.desc">
                     Jag älskar att åka skidor med mina kompisar – helst i Alperna eller Åre.
                 </p>
             </div>
 
             <div class="personal-card">
                 <img src="bilder/electronics.png" alt="Electronics image">
-                <h3>Nörda</h3>
-                <p>
+                <h3 data-i18n="pers.card3.title">Nörda</h3>
+                <p data-i18n="pers.card3.desc">
                     Jag gillar att skapa olika saker, vare sig det är spel, hemsidor eller elektronikprojekt.
                 </p>
             </div>
@@ -78,13 +84,13 @@
 
     <!-- FAVORITER / FUN FACTS -->
     <section class="personal-section">
-        <h2>Favoriter:</h2>
+        <h2 data-i18n="pers.favTitle">Favoriter:</h2>
 
         <ul class="favorites-list">
-            <li><strong>Stad:</strong> Prague 🇨🇿</li>
-            <li><strong>Mat:</strong> Pasta pesto (snabb + studentvänlig)</li>
-            <li><strong>Film:</strong> Will Hunting</li>
-            <li><strong>Programmeringsspråk:</strong> C++ (Såklart 😄)</li>
+            <li data-i18n="pers.fav.city"><strong>Stad:</strong> Prague 🇨🇿</li>
+            <li data-i18n="pers.fav.food"><strong>Mat:</strong> Pasta pesto (snabb + studentvänlig)</li>
+            <li data-i18n="pers.fav.film"><strong>Film:</strong> Will Hunting</li>
+            <li data-i18n="pers.fav.lang"><strong>Programmeringsspråk:</strong> C++ (Såklart 😄)</li>
         </ul>
     </section>
 
@@ -92,22 +98,22 @@
 
     <!-- MÅL -->
     <section class="personal-section">
-        <h2>Mål just nu</h2>
+        <h2 data-i18n="pers.goalsTitle">Mål just nu</h2>
         <div class="goals">
 
             <div class="goal">
-                <h3>🏃 Springa ett maraton</h3>
-                <p>Jag tränar inför att springa <b>ADIDAS STOCKHOLM MARATHON 2026</b>.</p>
+                <h3 data-i18n="pers.goal1.title">🏃 Springa ett maraton</h3>
+                <p data-i18n="pers.goal1.desc">Jag tränar inför att springa <b>ADIDAS STOCKHOLM MARATHON 2026</b>.</p>
             </div>
 
             <div class="goal">
-                <h3>🎓 Civilingenjörexamen</h3>
-                <p>Med fokus på matematik, programmering och datateknik.</p>
+                <h3 data-i18n="pers.goal2.title">🎓 Civilingenjörexamen</h3>
+                <p data-i18n="pers.goal2.desc">Med fokus på matematik, programmering och datateknik.</p>
             </div>
 
             <div class="goal">
-                <h3>🌍 Plugga utomlands</h3>
-                <p>Jag drömmer om att studera en termin i ett annat land, gärna i Europa. Tror det skulle vara mycket lärorikt och en fantastisk upplevelse.</p>
+                <h3 data-i18n="pers.goal3.title">🌍 Plugga utomlands</h3>
+                <p data-i18n="pers.goal3.desc">Jag drömmer om att studera en termin i ett annat land, gärna i Europa. Tror det skulle vara mycket lärorikt och en fantastisk upplevelse.</p>
             </div>
 
         </div>
@@ -117,21 +123,21 @@
 
     <!-- Kontakt-bubbla -->
     <button class="contact-bubble" id="contact-open" aria-haspopup="dialog" aria-controls="contact-modal" aria-expanded="false">
-        <img src="bilder/kontakt.JPG" alt="Kontakt"/>
+        <img src="bilder/kontakt.JPG" alt="Kontakt" data-i18n-attr="alt:contact.photoAlt"/>
     </button>
-    <div class="contact-tooltip" id="contact-tooltip">
+    <div class="contact-tooltip" id="contact-tooltip" data-i18n="contact.sayHi">
         Säg hej!
     </div>
 
     <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
         <div class="contact-modal-panel" role="document">
-            <button class="contact-close" id="contact-close" aria-label="Stäng kontakt">✕</button>
+            <button class="contact-close" id="contact-close" aria-label="Stäng kontakt" data-i18n-attr="aria-label:contact.closeAriaLabel">✕</button>
             <div class="contact-content">
-                <h3>Kontakt</h3>
-                    <p><strong>E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
-                    <p><strong>Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
+                <h3 data-i18n="contact.title">Kontakt</h3>
+                    <p><strong data-i18n="contact.emailLabel">E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
+                    <p><strong data-i18n="contact.phoneLabel">Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
                     <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rickard-hjerpe" target="_blank" rel="noopener">www.linkedin.com/in/rickard-hjerpe</a></p>
-                <p class="small">Klicka utanför panelen eller tryck Esc för att stänga.</p>
+                <p class="small" data-i18n="contact.hint">Klicka utanför panelen eller tryck Esc för att stänga.</p>
             </div>
         </div>
     </div>
@@ -197,5 +203,6 @@
             });
         })();
     </script>
+    <script src="js/i18n.js"></script>
 </body>
 </html>

@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/projects.css">
-    <title>Personliga Projekt</title>
+    <link rel="stylesheet" href="../styles/i18n.css">
+    <title data-i18n="title.personalProjects">Personliga Projekt</title>
 </head>
 <body>
     <header class="site-nav" role="banner">
@@ -14,40 +15,45 @@
             <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
                 <span></span>
             </label>
-            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation">
-                <a href="../utbildning.html">Utbildning</a>
-                <a href="../jobb.html">Jobb</a>
-                <a href="../personligt.html">Personligt</a>
-                <a href="../pomodoro.html">Min pomodoro timer</a>
+            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation" data-i18n-attr="aria-label:nav.ariaLabel">
+                <a href="../utbildning.html" data-i18n="nav.education">Utbildning</a>
+                <a href="../jobb.html" data-i18n="nav.work">Jobb</a>
+                <a href="../personligt.html" data-i18n="nav.personal">Personligt</a>
+                <a href="../pomodoro.html" data-i18n="nav.pomodoro">Min pomodoro timer</a>
             </nav>
+            <button class="lang-toggle" id="lang-toggle" role="switch" aria-checked="false" aria-label="Byt språk / Switch language">
+                <span class="lang-opt" data-lang="sv">SV</span>
+                <span class="lang-opt" data-lang="en">EN</span>
+                <span class="lang-thumb" aria-hidden="true"></span>
+            </button>
         </div>
     </header>
 
     <section class="project">
         <div class="project-image">
-            <img src="../bilder/heatmap/cafe_stockholm_no_nodes.png" alt="Heatmap visualisering i React">
+            <img src="../bilder/heatmap/cafe_stockholm_no_nodes.png" alt="Heatmap visualisering i React" data-i18n-attr="alt:pp.imgAlt">
         </div>
         <div class="project-info">
             <h2 class="project-title">Heatmap</h2>
-            <p class="project-period">Maj 2026</p>
-            <p class="project-desc">
+            <p class="project-period" data-i18n="pp.period">Maj 2026</p>
+            <p class="project-desc" data-i18n="pp.desc">
                 En heatmap som visar var det finns högst koncentration av ett vist sökord, t.ex. "bar" eller "cafe".
             </p>
-            <a href="../jobb/heatmap.html">Se projektet →</a>
+            <a href="../jobb/heatmap.html" data-i18n="jobb.viewProject">Se projektet →</a>
         </div>
     </section>
 
     <button class="contact-bubble" id="contact-open" aria-haspopup="dialog" aria-controls="contact-modal" aria-expanded="false">
-            <img src="../bilder/kontakt.JPG" alt="Kontakt" />
+            <img src="../bilder/kontakt.JPG" alt="Kontakt" data-i18n-attr="alt:contact.photoAlt" />
     </button>
-    <div class="contact-tooltip" id="contact-tooltip">Säg hej!</div>
+    <div class="contact-tooltip" id="contact-tooltip" data-i18n="contact.sayHi">Säg hej!</div>
 
     <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
             <div class="contact-modal-panel" role="document">
-                    <button class="contact-close" id="contact-close" aria-label="Stäng kontakt">✕</button>
+                    <button class="contact-close" id="contact-close" aria-label="Stäng kontakt" data-i18n-attr="aria-label:contact.closeAriaLabel">✕</button>
                     <div class="contact-content">
-                            <h3>Kontakt</h3>
-                            <p><strong>E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
+                            <h3 data-i18n="contact.title">Kontakt</h3>
+                            <p><strong data-i18n="contact.emailLabel">E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
                             <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rickard-hjerpe" target="_blank">www.linkedin.com/in/rickard-hjerpe</a></p>
                     </div>
             </div>
@@ -60,7 +66,7 @@
             const modal = document.getElementById('contact-modal');
             const closeBtn = document.getElementById('contact-close');
             const panel = modal.querySelector('.contact-modal-panel');
-            
+
             function openModal(){
                 modal.setAttribute('aria-hidden','false');
                 document.body.style.overflow = 'hidden';
@@ -80,5 +86,6 @@
             modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
         })();
     </script>
+    <script src="../js/i18n.js"></script>
 </body>
 </html>

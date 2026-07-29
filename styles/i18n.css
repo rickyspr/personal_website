@@ -1,0 +1,88 @@
+/* Language switch (SV | EN) + layout adjustments to fit it into the
+ * existing .site-nav header without disturbing brand/link positioning.
+ * Loaded after each page's own stylesheet so these overrides win. */
+
+.nav-inner {
+    justify-content: flex-start;
+}
+
+.nav-links {
+    margin-left: auto;
+}
+
+@media (max-width: 700px) {
+    .nav-toggle-label {
+        margin-left: auto;
+    }
+}
+
+.lang-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    margin-left: 18px;
+    padding: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    font: inherit;
+    line-height: 1;
+    flex: 0 0 auto;
+}
+
+.lang-toggle:hover {
+    background: rgba(0, 0, 0, 0.08);
+}
+
+.lang-toggle:focus-visible {
+    outline: 2px solid #111;
+    outline-offset: 2px;
+}
+
+.lang-opt {
+    position: relative;
+    z-index: 1;
+    padding: 5px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: #111;
+    transition: color 0.2s ease;
+}
+
+.lang-toggle:not(.is-en) .lang-opt[data-lang="en"] {
+    color: rgba(17, 17, 17, 0.4);
+}
+
+.lang-toggle.is-en .lang-opt[data-lang="sv"] {
+    color: rgba(17, 17, 17, 0.4);
+}
+
+.lang-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(50% - 2px);
+    height: calc(100% - 4px);
+    background: #fff;
+    border-radius: 999px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.lang-toggle.is-en .lang-thumb {
+    transform: translateX(100%);
+}
+
+/* Floating variant for pages without a .site-nav header (index.html) */
+.lang-toggle--floating {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    margin-left: 0;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+}

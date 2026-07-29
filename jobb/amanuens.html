@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/projects.css">
-    <title>Projekt</title>
+    <link rel="stylesheet" href="../styles/i18n.css">
+    <title data-i18n="title.projects">Projekt</title>
 </head>
 <body>
     <header class="site-nav" role="banner">
@@ -14,12 +15,17 @@
             <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
                 <span></span>
             </label>
-            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation">
-                <a href="../utbildning.html">Utbildning</a>
-                <a href="../jobb.html">Jobb</a>
-                <a href="../personligt.html">Personligt</a>
-                <a href="../pomodoro.html">Min pomodoro timer</a>
+            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation" data-i18n-attr="aria-label:nav.ariaLabel">
+                <a href="../utbildning.html" data-i18n="nav.education">Utbildning</a>
+                <a href="../jobb.html" data-i18n="nav.work">Jobb</a>
+                <a href="../personligt.html" data-i18n="nav.personal">Personligt</a>
+                <a href="../pomodoro.html" data-i18n="nav.pomodoro">Min pomodoro timer</a>
             </nav>
+            <button class="lang-toggle" id="lang-toggle" role="switch" aria-checked="false" aria-label="Byt språk / Switch language">
+                <span class="lang-opt" data-lang="sv">SV</span>
+                <span class="lang-opt" data-lang="en">EN</span>
+                <span class="lang-thumb" aria-hidden="true"></span>
+            </button>
         </div>
     </header>
 
@@ -29,10 +35,10 @@
         </div>
 
         <div class="project-info">
-            <h2 class="project-title">Lärare</h2>
-            <p class="project-category">Matematik 4</p>
-            <p class="project-period">Januari 2026 - April 2026</p>
-            
+            <h2 class="project-title" data-i18n="amanuens.s1.title">Lärare</h2>
+            <p class="project-category" data-i18n="amanuens.s1.category">Matematik 4</p>
+            <p class="project-period" data-i18n="amanuens.s1.period">Januari 2026 - April 2026</p>
+
             <p class="project-desc">
             </p>
         </div>
@@ -44,10 +50,10 @@
         </div>
 
         <div class="project-info">
-            <h2 class="project-title">Handledare</h2>
-            <p class="project-category">Grundläggande matematisk analys</p>
-            <p class="project-period">Oktober 2025 - Januari 2026</p>
-            
+            <h2 class="project-title" data-i18n="amanuens.s2.title">Handledare</h2>
+            <p class="project-category" data-i18n="amanuens.s2.category">Grundläggande matematisk analys</p>
+            <p class="project-period" data-i18n="amanuens.s2.period">Oktober 2025 - Januari 2026</p>
+
             <p class="project-desc">
             </p>
         </div>
@@ -59,10 +65,10 @@
         </div>
 
         <div class="project-info">
-            <h2 class="project-title">Mentor</h2>
-            <p class="project-category">Diskret matematik</p>
-            <p class="project-period">Augusti 2025 - Oktober 2026</p>
-            
+            <h2 class="project-title" data-i18n="amanuens.s3.title">Mentor</h2>
+            <p class="project-category" data-i18n="amanuens.s3.category">Diskret matematik</p>
+            <p class="project-period" data-i18n="amanuens.s3.period">Augusti 2025 - Oktober 2026</p>
+
             <p class="project-desc">
             </p>
         </div>
@@ -70,9 +76,9 @@
 
     <!-- Contact bubble bottom-left (opens overlay) -->
     <button class="contact-bubble" id="contact-open" aria-haspopup="dialog" aria-controls="contact-modal" aria-expanded="false">
-                <img src="../bilder/kontakt.JPG" alt="Kontakt" />
+                <img src="../bilder/kontakt.JPG" alt="Kontakt" data-i18n-attr="alt:contact.photoAlt" />
         </button>
-        <div class="contact-tooltip" id="contact-tooltip">
+        <div class="contact-tooltip" id="contact-tooltip" data-i18n="contact.sayHi">
             Säg hej!
         </div>
 
@@ -80,13 +86,13 @@
         <!-- Contact modal overlay -->
         <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
                 <div class="contact-modal-panel" role="document">
-                        <button class="contact-close" id="contact-close" aria-label="Stäng kontakt">✕</button>
+                        <button class="contact-close" id="contact-close" aria-label="Stäng kontakt" data-i18n-attr="aria-label:contact.closeAriaLabel">✕</button>
                         <div class="contact-content">
-                                <h3>Kontakt</h3>
-                                <p><strong>E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
-                                <p><strong>Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
+                                <h3 data-i18n="contact.title">Kontakt</h3>
+                                <p><strong data-i18n="contact.emailLabel">E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
+                                <p><strong data-i18n="contact.phoneLabel">Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
                                 <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rickard-hjerpe" target="_blank" rel="noopener">www.linkedin.com/in/rickard-hjerpe</a></p>
-                                <p class="small">Klicka utanför panelen eller tryck Esc för att stänga.</p>
+                                <p class="small" data-i18n="contact.hint">Klicka utanför panelen eller tryck Esc för att stänga.</p>
                         </div>
                 </div>
         </div>
@@ -96,6 +102,7 @@
             const openBtn = document.getElementById('contact-open');
             const modal = document.getElementById('contact-modal');
             const closeBtn = document.getElementById('contact-close');
+            const panel = modal.querySelector('.contact-modal-panel');
             let lastFocused = null;
 
             function openModal(){
@@ -155,5 +162,6 @@
             });
         })();
         </script>
+        <script src="../js/i18n.js"></script>
 </body>
 </html>

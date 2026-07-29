@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/projects.css">
-    <title>Projekt</title>
+    <link rel="stylesheet" href="../styles/i18n.css">
+    <title data-i18n="title.projects">Projekt</title>
 </head>
 <body>
     <header class="site-nav" role="banner">
@@ -14,12 +15,17 @@
             <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
                 <span></span>
             </label>
-            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation">
-                <a href="../utbildning.html">Utbildning</a>
-                <a href="../jobb.html">Jobb</a>
-                <a href="../personligt.html">Personligt</a>
-                <a href="../pomodoro.html">Min pomodoro timer</a>
+            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation" data-i18n-attr="aria-label:nav.ariaLabel">
+                <a href="../utbildning.html" data-i18n="nav.education">Utbildning</a>
+                <a href="../jobb.html" data-i18n="nav.work">Jobb</a>
+                <a href="../personligt.html" data-i18n="nav.personal">Personligt</a>
+                <a href="../pomodoro.html" data-i18n="nav.pomodoro">Min pomodoro timer</a>
             </nav>
+            <button class="lang-toggle" id="lang-toggle" role="switch" aria-checked="false" aria-label="Byt språk / Switch language">
+                <span class="lang-opt" data-lang="sv">SV</span>
+                <span class="lang-opt" data-lang="en">EN</span>
+                <span class="lang-thumb" aria-hidden="true"></span>
+            </button>
         </div>
     </header>
 
@@ -29,10 +35,10 @@
         </div>
 
         <div class="project-info">
-            <h2 class="project-title">Uppstart</h2>
-            <p class="project-period">Maj - September 2025</p>
+            <h2 class="project-title" data-i18n="sektion.s1.title">Uppstart</h2>
+            <p class="project-period" data-i18n="sektion.s1.period">Maj - September 2025</p>
 
-            <p class="project-desc">
+            <p class="project-desc" data-i18n="sektion.s1.desc">
                 I början av mitt engagemang i marknadsföringsutskottet gick mycket av arbetet ut på planering av det kommande året. Vad ville vi göra? Vad var våra förväntningar? Vi gjorde upp en plan för årets stora evenemang vi skulle ta del av, och såg till att alla kände sig bekväma med sina arbetsuppgifter. Det var en rolig och kreativ process där vi tillsammans formade vår vision för året. I slutet av denna period välkomnad vi även nya medlemar till utskottet.
             </p>
         </div>
@@ -44,10 +50,10 @@
         </div>
 
         <div class="project-info">
-            <h2 class="project-title">Skolbesök i Stockholm och Lund</h2>
-            <p class="project-period">December 2025 och April 2026</p>
+            <h2 class="project-title" data-i18n="sektion.s2.title">Skolbesök i Stockholm och Lund</h2>
+            <p class="project-period" data-i18n="sektion.s2.period">December 2025 och April 2026</p>
 
-            <p class="project-desc">
+            <p class="project-desc" data-i18n="sektion.s2.desc">
                 Vi åkte på två resor till Stockholm och Lund för att besöka gymnasieskolor och prata om datateknologsektionen och våra utbildningar. Det var en fantastisk möjlighet att träffa elever, svara på deras frågor och inspirera dem att överväga en framtid inom datateknik. Vi delade med oss av våra egna erfarenheter och berättade om de spännande projekt och möjligheter som finns inom sektionen och universitetet.
             </p>
         </div>
@@ -59,10 +65,10 @@
         </div>
 
         <div class="project-info">
-            <h2 class="project-title">Mässorna</h2>
-            <p class="project-period">Återkommande under hela året</p>
+            <h2 class="project-title" data-i18n="sektion.s3.title">Mässorna</h2>
+            <p class="project-period" data-i18n="sektion.s3.period">Återkommande under hela året</p>
 
-            <p class="project-desc">
+            <p class="project-desc" data-i18n="sektion.s3.desc">
                 Vi deltog i flera mässor och evenemang (t.ex. öppet hus och populärvetenskapliga dagarna i Linköping) för att marknadsföra datateknologsektionen och våra utbildningar. Dessa tillfällen gav oss möjlighet att träffa intresserade studenter, svara på frågor och dela med oss av våra erfarenheter.
             </p>
         </div>
@@ -75,24 +81,24 @@
 
         <div class="project-info">
             <h2 class="project-title">D-tour</h2>
-            <p class="project-period">Mars 2026</p>
+            <p class="project-period" data-i18n="sektion.s4.period">Mars 2026</p>
 
-            <p class="project-desc">
+            <p class="project-desc" data-i18n="sektion.s4.desc1">
                 Detta var ett av våra största projekt. Det är en två dagars aktivitet där vi ger möjligheten för gymnasieelever att komma till universitetet och testa på livet som datateknik student. Vi tog emot ett 30-tal elever som var nyfikna på att plugga vidare. Vi annordnade bland annat en campus vandring, workshops i programmering och en klassisk student sittning.
             </p>
-            <p class="project-desc">
+            <p class="project-desc" data-i18n="sektion.s4.desc2">
                 För min del innebar arbetet att ta kontakten med gymnasieskolor för att informera om denna möjlighet för eleverna. Det innnebar många telefonsamtal med Studie och yrkesvägledare runt om i landet. Det var en rolig och givande process där jag fick möjlighet att prata med många olika människor och sprida information om våra utbildningar. Det var också väldigt kul att se så många elever komma till universitetet och ha en rolig och inspirerande dag.
             </p>
         </div>
     </section>
 
-    
-    
+
+
         <!-- Contact bubble bottom-left (opens overlay) -->
         <button class="contact-bubble" id="contact-open" aria-haspopup="dialog" aria-controls="contact-modal" aria-expanded="false">
-                <img src="../bilder/kontakt.JPG" alt="Kontakt" />
+                <img src="../bilder/kontakt.JPG" alt="Kontakt" data-i18n-attr="alt:contact.photoAlt" />
         </button>
-        <div class="contact-tooltip" id="contact-tooltip">
+        <div class="contact-tooltip" id="contact-tooltip" data-i18n="contact.sayHi">
             Säg hej!
         </div>
 
@@ -100,13 +106,13 @@
         <!-- Contact modal overlay -->
         <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
                 <div class="contact-modal-panel" role="document">
-                        <button class="contact-close" id="contact-close" aria-label="Stäng kontakt">✕</button>
+                        <button class="contact-close" id="contact-close" aria-label="Stäng kontakt" data-i18n-attr="aria-label:contact.closeAriaLabel">✕</button>
                         <div class="contact-content">
-                                <h3>Kontakt</h3>
-                                <p><strong>E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
-                                <p><strong>Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
+                                <h3 data-i18n="contact.title">Kontakt</h3>
+                                <p><strong data-i18n="contact.emailLabel">E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
+                                <p><strong data-i18n="contact.phoneLabel">Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
                                 <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rickard-hjerpe" target="_blank" rel="noopener">www.linkedin.com/in/rickard-hjerpe</a></p>
-                                <p class="small">Klicka utanför panelen eller tryck Esc för att stänga.</p>
+                                <p class="small" data-i18n="contact.hint">Klicka utanför panelen eller tryck Esc för att stänga.</p>
                         </div>
                 </div>
         </div>
@@ -116,6 +122,7 @@
             const openBtn = document.getElementById('contact-open');
             const modal = document.getElementById('contact-modal');
             const closeBtn = document.getElementById('contact-close');
+            const panel = modal.querySelector('.contact-modal-panel');
             let lastFocused = null;
 
             function openModal(){
@@ -175,5 +182,6 @@
             });
         })();
         </script>
+        <script src="../js/i18n.js"></script>
 </body>
 </html>

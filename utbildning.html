@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/utbildning.css">
-    <title>Utbildning</title>
+    <link rel="stylesheet" href="styles/i18n.css">
+    <title data-i18n="title.education">Utbildning</title>
 </head>
 <body>
     <header class="site-nav" role="banner">
@@ -14,12 +15,17 @@
             <label for="nav-toggle" class="nav-toggle-label" aria-hidden="true">
                 <span></span>
             </label>
-            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation">
-                <a href="utbildning.html">Utbildning</a>
-                <a href="jobb.html">Jobb</a>
-                <a href="personligt.html">Personligt</a>
-                <a href="pomodoro.html">Min pomodoro timer</a>
+            <nav class="nav-links" role="navigation" aria-label="Huvudnavigation" data-i18n-attr="aria-label:nav.ariaLabel">
+                <a href="utbildning.html" data-i18n="nav.education">Utbildning</a>
+                <a href="jobb.html" data-i18n="nav.work">Jobb</a>
+                <a href="personligt.html" data-i18n="nav.personal">Personligt</a>
+                <a href="pomodoro.html" data-i18n="nav.pomodoro">Min pomodoro timer</a>
             </nav>
+            <button class="lang-toggle" id="lang-toggle" role="switch" aria-checked="false" aria-label="Byt språk / Switch language">
+                <span class="lang-opt" data-lang="sv">SV</span>
+                <span class="lang-opt" data-lang="en">EN</span>
+                <span class="lang-thumb" aria-hidden="true"></span>
+            </button>
         </div>
     </header>
 
@@ -30,175 +36,175 @@
 
         <div class="project-info">
             <p class="project-category">Computer Science</p>
-            <p class="project-period">Aug 2024 — Pågående</p>
-            <h2 class="project-title">Civilingenjör i datateknik - Linköpings Universitet</h2>
-            <p class="project-desc">
+            <p class="project-period" data-i18n="edu.period1">Aug 2024 — Pågående</p>
+            <h2 class="project-title" data-i18n="edu.title1">Civilingenjör i datateknik - Linköpings Universitet</h2>
+            <p class="project-desc" data-i18n="edu.desc1">
             Jag studerar för närvarande till civilingenjör i datateknik vid Linköpings Universitet. Min utbildning fokuserar på att ge en djup förståelse för datorsystem, programmering och mjukvaruutveckling, samt att utveckla färdigheter inom problemlösning och innovation inom teknikområdet.
             </p>
 
-            <button class="dropdown-toggle">Visa kurser ▼</button>
+            <button class="dropdown-toggle" data-i18n="edu.showCourses">Visa kurser ▼</button>
         </div>
     </section>
 
     <div class="dropdown-container">
-        
+
 
         <div class="dropdown-content">
             <table class="styled-table">
                 <thead>
                     <tr>
-                        <th>Kurs</th>
-                        <th>Kurskod</th>
-                        <th>Ämnesområde</th>
-                        <th>Betyg</th>
+                        <th data-i18n="edu.th.course">Kurs</th>
+                        <th data-i18n="edu.th.code">Kurskod</th>
+                        <th data-i18n="edu.th.subject">Ämnesområde</th>
+                        <th data-i18n="edu.th.grade">Betyg</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
-                        <td>Diskret matematik</td>
+                        <td data-i18n="edu.course.tata65">Diskret matematik</td>
                         <td>TATA65</td>
-                        <td>Matematik</td>
+                        <td data-i18n="edu.subject.math">Matematik</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Linjär algebra</td>
+                        <td data-i18n="edu.course.tata24">Linjär algebra</td>
                         <td>TATA24</td>
-                        <td>Matematik</td>
+                        <td data-i18n="edu.subject.math">Matematik</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Funktionell och imperativ programmering, del 2</td>
+                        <td data-i18n="edu.course.tdde24">Funktionell och imperativ programmering, del 2</td>
                         <td>TDDE24</td>
-                        <td>Programmering</td>
+                        <td data-i18n="edu.subject.programming">Programmering</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Ingenjörsprofessionalism, del 1</td>
+                        <td data-i18n="edu.course.tddd70">Ingenjörsprofessionalism, del 1</td>
                         <td>TDDD70</td>
-                        <td>Professionell kompetens</td>
+                        <td data-i18n="edu.subject.profcomp">Professionell kompetens</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Inledande matematisk analys</td>
+                        <td data-i18n="edu.course.tatb04">Inledande matematisk analys</td>
                         <td>TATB04</td>
-                        <td>Matematik</td>
+                        <td data-i18n="edu.subject.math">Matematik</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Digitalteknik</td>
+                        <td data-i18n="edu.course.tsea22">Digitalteknik</td>
                         <td>TSEA22</td>
-                        <td>Datateknik, Elektronik</td>
+                        <td data-i18n="edu.subject.cseElec">Datateknik, Elektronik</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Ingenjörsprofessionalism, del 6</td>
+                        <td data-i18n="edu.course.tddd98">Ingenjörsprofessionalism, del 6</td>
                         <td>TDDD98</td>
-                        <td>Professionell kompetens</td>
+                        <td data-i18n="edu.subject.profcomp">Professionell kompetens</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Elektronik</td>
+                        <td data-i18n="edu.course.tste24">Elektronik</td>
                         <td>TSTE24</td>
-                        <td>Elektronik</td>
+                        <td data-i18n="edu.subject.electronics">Elektronik</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Ingenjörsprofessionalism, del 3</td>
+                        <td data-i18n="edu.course.tddd84">Ingenjörsprofessionalism, del 3</td>
                         <td>TDDD84</td>
-                        <td>Professionell kompetens</td>
+                        <td data-i18n="edu.subject.profcomp">Professionell kompetens</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Datastrukturer, algoritmer och programmeringsparadigm</td>
+                        <td data-i18n="edu.course.tddd86">Datastrukturer, algoritmer och programmeringsparadigm</td>
                         <td>TDDD86</td>
-                        <td>Programmering / Algoritmer</td>
+                        <td data-i18n="edu.subject.progAlgo">Programmering / Algoritmer</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Mekanik</td>
+                        <td data-i18n="edu.course.tfya93">Mekanik</td>
                         <td>TFYA93</td>
-                        <td>Fysik</td>
+                        <td data-i18n="edu.subject.physics">Fysik</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Envariabelanalys 1</td>
+                        <td data-i18n="edu.course.tata41">Envariabelanalys 1</td>
                         <td>TATA41</td>
-                        <td>Matematik</td>
+                        <td data-i18n="edu.subject.math">Matematik</td>
                         <td>4</td>
                     </tr>
                     <tr>
-                        <td>Envariabelanalys 2</td>
+                        <td data-i18n="edu.course.tata42">Envariabelanalys 2</td>
                         <td>TATA42</td>
-                        <td>Matematik</td>
+                        <td data-i18n="edu.subject.math">Matematik</td>
                         <td>4</td>
                     </tr>
                     <tr>
-                        <td>Flervariabelanalys</td>
+                        <td data-i18n="edu.course.tata76">Flervariabelanalys</td>
                         <td>TATA76</td>
-                        <td>Matematik</td>
+                        <td data-i18n="edu.subject.math">Matematik</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Funktionell och imperativ programmering, del 1</td>
+                        <td data-i18n="edu.course.tdde23">Funktionell och imperativ programmering, del 1</td>
                         <td>TDDE23</td>
-                        <td>Programmering</td>
-                        <td>G*</td>
+                        <td data-i18n="edu.subject.programming">Programmering</td>
+                        <td data-i18n="edu.grade.pass">G*</td>
                     </tr>
                     <tr>
-                        <td>Perspektiv på data- och mjukvaruteknik</td>
+                        <td data-i18n="edu.course.tddd25">Perspektiv på data- och mjukvaruteknik</td>
                         <td>TDDD25</td>
-                        <td>Programmering</td>
-                        <td>G*</td>
+                        <td data-i18n="edu.subject.programming">Programmering</td>
+                        <td data-i18n="edu.grade.pass">G*</td>
                     </tr>
                     <tr>
-                        <td>Datorteknik</td>
+                        <td data-i18n="edu.course.tsea82">Datorteknik</td>
                         <td>TSEA82</td>
-                        <td>Datateknik, Elektronik</td>
-                        <td>G*</td>
+                        <td data-i18n="edu.subject.cseElec">Datateknik, Elektronik</td>
+                        <td data-i18n="edu.grade.pass">G*</td>
                     </tr>
                     <tr>
-                        <td>Processprogrammering och operativsystem</td>
+                        <td data-i18n="edu.course.tdde86">Processprogrammering och operativsystem</td>
                         <td>TDDE86</td>
-                        <td>Datateknik, Programmering</td>
+                        <td data-i18n="edu.subject.cseProg">Datateknik, Programmering</td>
                         <td>3</td>
                     </tr>
                     <tr>
-                        <td>Datorkonstruktion</td>
+                        <td data-i18n="edu.course.tsea83">Datorkonstruktion</td>
                         <td>TSEA83</td>
-                        <td>Datateknik, Elektronik</td>
-                        <td>G*</td>
+                        <td data-i18n="edu.subject.cseElec">Datateknik, Elektronik</td>
+                        <td data-i18n="edu.grade.pass">G*</td>
                     </tr>
                     <tr>
-                        <td>Sannolikhetslära och statistik</td>
+                        <td data-i18n="edu.course.tams11">Sannolikhetslära och statistik</td>
                         <td>TAMS11</td>
-                        <td>Matematik, Tillämpad matematik</td>
+                        <td data-i18n="edu.subject.mathApplied">Matematik, Tillämpad matematik</td>
                         <td><b>5</b></td>
                     </tr>
                     <tr>
-                        <td>Fysik</td>
+                        <td data-i18n="edu.course.tfya86">Fysik</td>
                         <td>TFYA86</td>
-                        <td>Teknisk fysik</td>
+                        <td data-i18n="edu.subject.engPhysics">Teknisk fysik</td>
                         <td><b>5</b></td>
                     </tr>
 
                     <!-- Pågående kurser -->
                 </tbody>
             </table>
-            <p>* Betygskala U/G</p>
+            <p data-i18n="edu.footnote">* Betygskala U/G</p>
         </div>
-        
+
     </div>
-    
+
     <section class="project">
         <div class="project-image">
             <img src="bilder/su.jpg" alt="Project image">
         </div>
 
         <div class="project-info">
-            <p class="project-category">Matematik</p>
-            <p class="project-period">Jan 2024 — Juni 2024</p>
-            <h2 class="project-title">Matematik 1 - Stockholms Universitet</h2>
-            <p class="project-desc">
+            <p class="project-category" data-i18n="edu.subject.math">Matematik</p>
+            <p class="project-period" data-i18n="edu.section2.period">Jan 2024 — Juni 2024</p>
+            <h2 class="project-title" data-i18n="edu.section2.title">Matematik 1 - Stockholms Universitet</h2>
+            <p class="project-desc" data-i18n="edu.section2.desc">
             Under våren 2024 studerade jag Matematik 1 vid Stockholms Universitet. Kursen täckte Diskret matematik, Linjär algebra, Envariabelanalys och Flervariabelanalys. Jag utvecklade en stark förståelse för matematiska principer och deras tillämpningar inom olika områden.
             </p>
         </div>
@@ -210,34 +216,34 @@
         </div>
 
         <div class="project-info">
-            <p class="project-category">Gymnasieutbildning</p>
-            <p class="project-period">Augusti 2020 - Juni 2023</p>
-            <h2 class="project-title">Teknikvetenskapsprogrammet - Nacka Gymnasium</h2>
-            <p class="project-desc">
+            <p class="project-category" data-i18n="edu.section3.category">Gymnasieutbildning</p>
+            <p class="project-period" data-i18n="edu.section3.period">Augusti 2020 - Juni 2023</p>
+            <h2 class="project-title" data-i18n="edu.section3.title">Teknikvetenskapsprogrammet - Nacka Gymnasium</h2>
+            <p class="project-desc" data-i18n="edu.section3.desc">
                 Under min tid på Teknikvetenskapsprogrammet vid Nacka Gymnasium utvecklade jag en stark grund inom matematik och teknik. Jag deltog i flera projekt och samarbeten som förberedde mig för vidare studier inom teknik och datavetenskap.
             </p>
         </div>
     </section>
     </section>
-    
+
         <!-- Contact bubble bottom-left (opens overlay) -->
         <button class="contact-bubble" id="contact-open" aria-haspopup="dialog" aria-controls="contact-modal" aria-expanded="false">
-                <img src="bilder/kontakt.JPG" alt="Kontakt" />
+                <img src="bilder/kontakt.JPG" alt="Kontakt" data-i18n-attr="alt:contact.photoAlt" />
         </button>
-        <div class="contact-tooltip" id="contact-tooltip">
+        <div class="contact-tooltip" id="contact-tooltip" data-i18n="contact.sayHi">
             Säg hej!
         </div>
 
         <!-- Contact modal overlay -->
         <div class="contact-modal" id="contact-modal" role="dialog" aria-modal="true" aria-hidden="true">
                 <div class="contact-modal-panel" role="document">
-                        <button class="contact-close" id="contact-close" aria-label="Stäng kontakt">✕</button>
+                        <button class="contact-close" id="contact-close" aria-label="Stäng kontakt" data-i18n-attr="aria-label:contact.closeAriaLabel">✕</button>
                         <div class="contact-content">
-                                <h3>Kontakt</h3>
-                                <p><strong>E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
-                                <p><strong>Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
+                                <h3 data-i18n="contact.title">Kontakt</h3>
+                                <p><strong data-i18n="contact.emailLabel">E-post:</strong> <a href="mailto:rickard.hjerpe@gmail.com">rickard.hjerpe@gmail.com</a></p>
+                                <p><strong data-i18n="contact.phoneLabel">Telefon:</strong> <a href="tel:+46722118822">+46 72 211 88 22</a></p>
                                 <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/rickard-hjerpe" target="_blank" rel="noopener">www.linkedin.com/in/rickard-hjerpe</a></p>
-                                <p class="small">Klicka utanför panelen eller tryck Esc för att stänga.</p>
+                                <p class="small" data-i18n="contact.hint">Klicka utanför panelen eller tryck Esc för att stänga.</p>
                         </div>
                 </div>
         </div>
@@ -247,6 +253,7 @@
             const openBtn = document.getElementById('contact-open');
             const modal = document.getElementById('contact-modal');
             const closeBtn = document.getElementById('contact-close');
+            const panel = modal.querySelector('.contact-modal-panel');
             let lastFocused = null;
 
             function openModal(){
@@ -306,17 +313,20 @@
             });
         })();
         </script>
+        <script src="js/i18n.js"></script>
         <script>
         document.querySelector(".dropdown-toggle").addEventListener("click", function() {
             const content = document.querySelector(".dropdown-content");
+            const btn = this;
 
             if (content.style.maxHeight) {
                 content.style.maxHeight = null;
-                this.innerText = "Visa kurser ▼";
+                btn.dataset.i18n = "edu.showCourses";
             } else {
                 content.style.maxHeight = content.scrollHeight + "px";
-                this.innerText = "Dölj kurser ▲";
+                btn.dataset.i18n = "edu.hideCourses";
             }
+            btn.textContent = window.i18n.t(btn.dataset.i18n);
         });
         </script>
 </body>
