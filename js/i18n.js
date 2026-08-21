@@ -128,7 +128,7 @@
         'pers.card2.title': 'Skiing',
         'pers.card2.desc': 'I love skiing with my friends — preferably in the Alps or Åre.',
         'pers.card3.title': 'Geeking out',
-        'pers.card3.desc': "I like creating all kinds of things, whether it's games, websites or electronics projects.",
+        'pers.card3.desc': "I like creating all kinds of things, whether it's games, websites or electronics projects. Check out my <a href=\"jobb/personal_projects.html\">personal projects</a>.",
         'pers.favTitle': 'Favorites:',
         'pers.fav.city': '<strong>City:</strong> London 🇬🇧',
         'pers.fav.food': '<strong>Food:</strong> Entrecôte with fries',
