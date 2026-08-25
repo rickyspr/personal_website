@@ -53,6 +53,11 @@
         'edu.th.subject': 'Subject area',
         'edu.th.grade': 'Grade',
 
+        'edu.gpa.title': 'GPA',
+        'edu.gpa.weighted': 'Weighted',
+        'edu.gpa.unweighted': 'Unweighted',
+        'edu.gpa.note': 'Based on 17 courses with numeric grades',
+
         'edu.course.tata65': 'Discrete Mathematics',
         'edu.course.tata24': 'Linear Algebra',
         'edu.course.tdde24': 'Functional and Imperative Programming, Part 2',
@@ -68,9 +73,9 @@
         'edu.course.tata42': 'Single-Variable Calculus 2',
         'edu.course.tata76': 'Multivariable Calculus',
         'edu.course.tdde23': 'Functional and Imperative Programming, Part 1',
-        'edu.course.tddd25': 'Perspectives on Computer and Software Engineering',
+        'edu.course.tdde25': 'Perspectives on Computer and Software Engineering',
         'edu.course.tsea82': 'Computer Engineering',
-        'edu.course.tdde86': 'Concurrent Programming and Operating Systems',
+        'edu.course.tddb68': 'Concurrent Programming and Operating Systems',
         'edu.course.tsea83': 'Computer Design',
         'edu.course.tams11': 'Probability Theory and Statistics',
         'edu.course.tfya86': 'Physics',

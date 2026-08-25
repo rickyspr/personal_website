@@ -342,10 +342,8 @@
 /* Container */
 .dropdown-container {
     width: 100%;
-    max-width: 600px;
+    max-width: 900px;
     margin: 20px 0;
-    overflow-x: auto; /* Gör tabellen scrollbar på små skärmar */
-
 }
 
 /* Toggle-knapp */
@@ -374,6 +372,124 @@
     background: #f9faff;
     border-radius: 0 0 6px 6px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+/* Tabell + GPA-box sida vid sida */
+.dropdown-flex {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 0 0 12px 0;
+}
+
+.dropdown-table-wrap {
+    flex: 1 1 380px;
+    min-width: 0;
+    overflow-x: auto; /* Gör tabellen scrollbar på små skärmar */
+}
+
+/* GPA-ruta */
+.gpa-box {
+    flex: 0 0 220px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    padding: 20px 16px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.gpa-title {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    color: #666;
+    margin: 0;
+}
+
+.gpa-value {
+    font-size: 42px;
+    font-weight: 700;
+    color: #4c74ff;
+    margin: 0;
+    line-height: 1;
+}
+
+.gpa-toggle {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    width: 100%;
+    padding: 2px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 999px;
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.gpa-toggle-btn {
+    position: relative;
+    z-index: 1;
+    flex: 1;
+    padding: 6px 8px;
+    border: none;
+    background: transparent;
+    border-radius: 999px;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 700;
+    color: rgba(17, 17, 17, 0.4);
+    cursor: pointer;
+    transition: color 0.2s ease;
+}
+
+.gpa-toggle-btn.is-active {
+    color: #111;
+}
+
+.gpa-toggle-btn:focus-visible {
+    outline: 2px solid #111;
+    outline-offset: 2px;
+}
+
+.gpa-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: calc(50% - 2px);
+    height: calc(100% - 4px);
+    background: #fff;
+    border-radius: 999px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease;
+}
+
+.gpa-toggle.is-unweighted .gpa-thumb {
+    transform: translateX(100%);
+}
+
+.gpa-note {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+}
+
+@media (max-width: 700px) {
+    .dropdown-container {
+        max-width: 600px;
+    }
+
+    .dropdown-flex {
+        flex-direction: column;
+    }
+
+    .gpa-box {
+        flex: 0 0 auto;
+        width: 100%;
+    }
 }
 
 /* Tabell */
