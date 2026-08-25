@@ -1,3 +1,108 @@
+/* --- GitHub Profile Card --- */
+.github-card {
+  display: block;
+  max-width: 700px;
+  margin: 60px auto 0;
+  padding: 24px 28px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.github-card:hover,
+.github-card:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
+}
+
+.github-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.github-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  background: #eee;
+}
+
+.github-card-identity {
+  display: flex;
+  flex-direction: column;
+}
+
+.github-name {
+  font-weight: 700;
+  font-size: 18px;
+  color: #111;
+}
+
+.github-username {
+  color: #888;
+  font-size: 14px;
+}
+
+.github-bio {
+  margin: 14px 0 18px;
+  color: #555;
+  line-height: 1.5;
+  font-size: 15px;
+}
+
+.github-contrib {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 14px;
+}
+
+.github-contrib-graph {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 480px;
+}
+
+.github-cta {
+  display: inline-block;
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 1px solid black;
+  transition: opacity 0.2s ease;
+}
+
+.github-card:hover .github-cta {
+  opacity: 0.6;
+}
+
+@media (max-width: 600px) {
+  .github-card {
+    margin: 40px auto 0;
+    padding: 18px 16px;
+  }
+
+  .github-avatar {
+    width: 56px;
+    height: 56px;
+  }
+
+  .github-name {
+    font-size: 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .github-card {
+    transition: none;
+  }
+}
+
 .project {
   display: flex;
   align-items: center;

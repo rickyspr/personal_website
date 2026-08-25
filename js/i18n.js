@@ -185,6 +185,10 @@
         'sektion.s4.desc2': 'For my part, the work involved contacting upper secondary schools to inform them about this opportunity for their students. It meant many phone calls with study and career counsellors around the country. It was a fun and rewarding process where I got to talk to many different people and spread information about our programmes. It was also great to see so many students come to the university and have a fun and inspiring day.',
 
         // jobb/personal_projects.html
+        'gh.bio': 'CS student exploring the world of AI & ML | Always building and learning through fun side projects.',
+        'gh.cta': 'View my GitHub profile →',
+        'gh.avatarAlt': "Rickard Hjerpe's GitHub profile picture",
+        'gh.contribAlt': "Rickard Hjerpe's GitHub contributions over the past year",
         'pp.period': 'May 2026',
         'pp.desc': 'A heatmap that shows where there is the highest concentration of a given keyword, e.g. "bar" or "cafe".',
         'pp.imgAlt': 'Heatmap visualization in React',
