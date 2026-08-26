@@ -28,20 +28,21 @@
         </div>
     </header>
 
-    <a class="github-card" href="https://github.com/rickyspr" target="_blank" rel="noopener" aria-label="Rickard Hjerpes GitHub-profil">
-        <div class="github-card-header">
+    <div class="github-card">
+        <a class="github-card-header" href="https://github.com/rickyspr" target="_blank" rel="noopener" aria-label="Rickard Hjerpes GitHub-profil">
             <img class="github-avatar" src="https://github.com/rickyspr.png" alt="Rickard Hjerpes profilbild på GitHub" data-i18n-attr="alt:gh.avatarAlt" width="72" height="72" loading="lazy">
             <div class="github-card-identity">
                 <span class="github-name">Rickard Hjerpe</span>
                 <span class="github-username">@rickyspr</span>
             </div>
-        </div>
+        </a>
         <p class="github-bio" data-i18n="gh.bio">CS-student som utforskar AI &amp; ML | Bygger och lär alltid genom roliga sidoprojekt.</p>
-        <div class="github-contrib">
+        <div class="github-contrib" id="github-contrib">
             <img class="github-contrib-graph" src="https://ghchart.rshah.org/2ea44f/rickyspr" alt="Rickard Hjerpes GitHub-contributions det senaste året" data-i18n-attr="alt:gh.contribAlt" loading="lazy">
         </div>
-        <span class="github-cta" data-i18n="gh.cta">Se min GitHub-profil →</span>
-    </a>
+        <a class="github-cta" href="https://github.com/rickyspr" target="_blank" rel="noopener" data-i18n="gh.cta">Se min GitHub-profil →</a>
+    </div>
+    <div class="github-tooltip" id="github-tooltip" role="tooltip" aria-hidden="true"></div>
 
     <section class="project">
         <div class="project-image">
@@ -115,5 +116,6 @@
         })();
     </script>
     <script src="../js/i18n.js"></script>
+    <script src="../js/github-contrib.js"></script>
 </body>
 </html>

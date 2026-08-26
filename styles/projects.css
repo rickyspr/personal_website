@@ -7,13 +7,11 @@
   border-radius: 14px;
   border: 1px solid rgba(0,0,0,0.08);
   box-shadow: 0 6px 20px rgba(0,0,0,0.06);
-  text-decoration: none;
   color: inherit;
   transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
-.github-card:hover,
-.github-card:focus-visible {
+.github-card:hover {
   transform: translateY(-3px);
   box-shadow: 0 10px 30px rgba(0,0,0,0.12);
 }
@@ -22,6 +20,9 @@
   display: flex;
   align-items: center;
   gap: 16px;
+  width: fit-content;
+  text-decoration: none;
+  color: inherit;
 }
 
 .github-avatar {
@@ -69,8 +70,36 @@
   min-width: 480px;
 }
 
+.github-contrib-svg {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.github-contrib-svg .gh-month-label,
+.github-contrib-svg .gh-weekday-label {
+  font-size: 9px;
+  fill: #767676;
+  font-family: inherit;
+}
+
+.github-contrib-svg rect {
+  cursor: pointer;
+  outline: none;
+  transition: stroke 120ms ease;
+}
+
+.github-contrib-svg rect:hover,
+.github-contrib-svg rect:focus-visible {
+  stroke: #555;
+  stroke-width: 1px;
+}
+
 .github-cta {
   display: inline-block;
+  text-decoration: none;
+  color: inherit;
   font-weight: 600;
   padding-bottom: 2px;
   border-bottom: 1px solid black;
@@ -79,6 +108,37 @@
 
 .github-card:hover .github-cta {
   opacity: 0.6;
+}
+
+/* Floating tooltip for individual contribution-graph cells */
+.github-tooltip {
+  position: fixed;
+  z-index: 300;
+  top: 0;
+  left: 0;
+  background: #1b1f23;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 120ms ease, transform 120ms ease;
+  white-space: nowrap;
+}
+
+.github-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .github-tooltip {
+    transition: none;
+  }
 }
 
 @media (max-width: 600px) {
