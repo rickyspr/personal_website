@@ -230,7 +230,7 @@
             color: var(--k-dim);
         }
 
-        .field-group input[type="number"] {
+        .field-group input {
             width: 100%;
             padding: 8px 10px;
             background: var(--k-ground);
@@ -241,7 +241,7 @@
             font-size: 14px;
         }
 
-        .field-group input[type="number"]:focus-visible { border-color: var(--k-accent); }
+        .field-group input:focus-visible { border-color: var(--k-accent); }
 
         .station-select {
             width: 100%;
@@ -588,6 +588,11 @@
                     <h3>Inställningar</h3>
 
                     <div class="field-group">
+                        <label for="user-name">Ditt namn</label>
+                        <input type="text" id="user-name" maxlength="40" autocomplete="off" spellcheck="false">
+                    </div>
+
+                    <div class="field-group">
                         <label for="focus-duration">Fokustid (minuter)</label>
                         <input type="number" id="focus-duration" min="1" max="60" value="25">
                     </div>
@@ -626,12 +631,7 @@
         <div class="rule"></div>
 
         <div class="footer-row">
-            <div class="roster" aria-hidden="true">
-                <span class="host">MK</span>
-                <span>AS</span>
-                <span>JL</span>
-                <span>EW</span>
-            </div>
+            <div class="roster" id="roster"></div>
             <p id="motivation-display">Fyra i rummet, alla i samma minut.</p>
         </div>
     </footer>

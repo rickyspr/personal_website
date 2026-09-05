@@ -26,12 +26,65 @@ const breakDurationInput = document.getElementById('break-duration');
 const settingsToggle = document.getElementById('settings-toggle');
 const settingsContent = document.getElementById('settings-content');
 const motivationDisplay = document.getElementById('motivation-display');
+const rosterEl = document.getElementById('roster');
+const nameInput = document.getElementById('user-name');
 
 let currentRoom = '';
 let timerInterval;
 let currentFocusDuration = 25;
 let currentBreakDuration = 5;
 let keepaliveInterval; // Spåra keepalive-intervallet
+
+// ── Visningsnamn: auto-genereras en gång och sparas i webbläsaren ──
+const NAME_KEY = 'pomodoro-user-name';
+const NAME_ADJ = ['Pigg', 'Lugn', 'Snabb', 'Klok', 'Modig', 'Glad', 'Skarp', 'Vaken', 'Rapp', 'Stark'];
+const NAME_NOUN = ['Räv', 'Uggla', 'Lo', 'Älg', 'Mård', 'Järv', 'Hök', 'Bäver', 'Grävling', 'Ekorre'];
+
+function generateName() {
+    const a = NAME_ADJ[Math.floor(Math.random() * NAME_ADJ.length)];
+    const n = NAME_NOUN[Math.floor(Math.random() * NAME_NOUN.length)];
+    return `${a} ${n}`;
+}
+
+function loadUserName() {
+    let name = null;
+    try { name = localStorage.getItem(NAME_KEY); } catch (e) {}
+    if (!name) {
+        name = generateName();
+        try { localStorage.setItem(NAME_KEY, name); } catch (e) {}
+    }
+    return name;
+}
+
+let userName = loadUserName();
+
+// Rita om deltagarcirklarna utifrån serverns lista
+function renderRoster(users) {
+    if (!rosterEl) return;
+    rosterEl.innerHTML = '';
+    if (!Array.isArray(users)) return;
+    users.forEach((u) => {
+        const span = document.createElement('span');
+        span.textContent = u.initials || '??';
+        span.title = u.host ? `${u.name} — värd` : u.name;
+        if (u.host) span.classList.add('host');
+        rosterEl.appendChild(span);
+    });
+}
+
+if (nameInput) {
+    nameInput.value = userName;
+    nameInput.addEventListener('change', () => {
+        const value = nameInput.value.trim();
+        if (!value) {
+            nameInput.value = userName;
+            return;
+        }
+        userName = value;
+        try { localStorage.setItem(NAME_KEY, userName); } catch (e) {}
+        socket.emit('update-name', userName);
+    });
+}
 
 // Starta keepalive-mekanismen med HTTP-fetch för att undvika Renders 15-minuters sleep
 function startKeepAlive() {
@@ -51,9 +104,14 @@ startKeepAlive();
 joinBtn.addEventListener('click', () => {
     currentRoom = roomInput.value;
     if (currentRoom) {
-        socket.emit('join-room', currentRoom);
+        socket.emit('join-room', { roomId: currentRoom, name: userName });
         currentRoomText.innerText = `Du är i rum: ${currentRoom}`;
     }
+});
+
+// Deltagarlistan från servern
+socket.on('room-users', (users) => {
+    renderRoster(users);
 });
 
 // Inställningar toggle
@@ -170,7 +228,7 @@ socket.on('disconnect', () => {
 
 socket.on('reconnect', () => {
     if (currentRoom) {
-        socket.emit('join-room', currentRoom);
+        socket.emit('join-room', { roomId: currentRoom, name: userName });
         modeDisplay.innerText = '✅ Återansluten!';
     }
     
