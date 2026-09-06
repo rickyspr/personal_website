@@ -41,6 +41,7 @@
         'title.personal': 'Personal',
         'title.personalProjects': 'Personal Projects',
         'title.heatmap': 'Project - Urban Intelligence',
+        'title.counter': 'Counter',
 
         // utbildning.html
         'edu.period1': 'Aug 2024 — Ongoing',
@@ -129,7 +130,7 @@
         'pers.heroDesc': "My name is Rickard and I'm a tech-interested student who loves creating things — everything from electric cars and games to websites. I enjoy challenges, structure, creativity and always learning something new.",
         'pers.interestsTitle': 'My interests',
         'pers.card1.title': 'Running & training',
-        'pers.card1.desc': "I run 5–10 km regularly and I'm aiming for my first marathon. Training keeps me energized, happy and focused.",
+        'pers.card1.desc': "I love running and training. I ran my first marathon in Stockholm in 2026 and I'm currently training for new challenges.",
         'pers.card2.title': 'Skiing',
         'pers.card2.desc': 'I love skiing with my friends — preferably in the Alps or Åre.',
         'pers.card3.title': 'Geeking out',
@@ -150,21 +151,26 @@
         // jobb/formula.html
         'formula.s1.title': 'Kickoff',
         'formula.s1.period': 'August 2025',
+        'formula.s1.desc': 'The year started with a big kickoff so we could get to know each other and set goals for the season. With over 100 people in the association it was important to learn about its structure and the different teams you could turn to and help.',
         'formula.s2.title': 'Learning',
         'formula.s2.period': 'September 2025',
+        'formula.s2.desc': "At the start of the project the focus was heavily on learning. We all had to get familiar with the previous systems to build a foundation to work from. It was a fun and creative process where we shaped our vision for the year together, while also getting to know each other in the team. I think this period was key to the work going as well as it did during the year, instead of us just diving in and starting to code right away.",
         'formula.s3.title': 'Development',
         'formula.s3.period': 'October 2025 - April 2026',
+        'formula.s3.desc': "This was the largest part of the project, where we took last year's systems and developed them to meet this year's new requirements and ideas, so the car would be better and more competitive. For me and my colleague this meant developing the VCU (Vehicle Control Unit) to control the car efficiently. Our big goal was to introduce several different driving modes in the VCU, which meant new code, a new PCB and new hardware. It was fun and rewarding to take part in such a complete process in a large project, being involved from idea to finished product. It was also a challenge to get everything to work together with the car's other systems, which required a lot of collaboration and communication between the teams.",
         'formula.s4.title': 'Testing',
         'formula.s4.period': 'February 2026 - Summer 2026',
+        'formula.s4.desc': 'This was a critical phase where we needed to make sure all systems worked as they should. We ran extensive tests of the VCU and its integration with the car\'s other systems. It was important to identify and fix any issues before the competition. I learned a lot about test methodology and the importance of careful documentation during this period.',
         'formula.s5.title': 'Competition',
         'formula.s5.period': 'Summer 2026',
+        'formula.s5.desc': 'Summer means the "competition season", where we travelled around Europe competing against other universities.',
 
         // jobb/amanuens.html
         'amanuens.s1.title': 'Teacher',
         'amanuens.s1.category': 'Mathematics 4',
         'amanuens.s1.period': 'January 2026 - April 2026',
         'amanuens.s2.title': 'Supervisor',
-        'amanuens.s2.category': 'Introductory Mathematical Analysis',
+        'amanuens.s2.category': 'Basic Mathematical Analysis',
         'amanuens.s2.period': 'October 2025 - January 2026',
         'amanuens.s3.title': 'Mentor',
         'amanuens.s3.category': 'Discrete Mathematics',
@@ -189,11 +195,18 @@
         'gh.cta': 'View my GitHub profile →',
         'gh.avatarAlt': "Rickard Hjerpe's GitHub profile picture",
         'gh.contribAlt': "Rickard Hjerpe's GitHub contributions over the past year",
-        'pp.period': 'May 2026',
-        'pp.desc': 'A heatmap that shows where there is the highest concentration of a given keyword, e.g. "bar" or "cafe".',
-        'pp.imgAlt': 'Heatmap visualization in React',
+        'pp.counter.period': 'August 2026 - actively in development',
+        'pp.counter.desc': 'A logging app built for use at the gym to help you keep better track of your training and progress.',
+        'pp.counter.imgAlt': 'Counter app landing screen',
+        'pp.heatmap.period': 'May 2026',
+        'pp.heatmap.desc': 'A heatmap that shows where there is the highest concentration of a given keyword, e.g. "bar" or "cafe".',
+        'pp.heatmap.imgAlt': 'Heatmap visualization in React',
+        'pp.pomodoro.period': 'March 2026',
+        'pp.pomodoro.desc': 'A synchronized pomodoro timer that helps users stay focused and work efficiently together.',
+        'pp.pomodoro.imgAlt': 'Synced pomodoro timer',
 
         // jobb/heatmap.html
+        'heatmap.imgAlt.hero': 'Heatmap visualization in React',
         'heatmap.s1.desc': 'The foundation of the project is an interactive web application built in <strong>React</strong>. To visualize the density of services in a city I implemented <strong>Leaflet.heat</strong>. The challenge here was creating a dynamic heatmap where the "intensity" (max value) automatically adapts based on the amount of data returned, ensuring the map stays readable whether you search in a small town or in New York.',
         'heatmap.s2.desc': 'The backend is powered by <strong>Flask</strong> and acts as a bridge between the user and the <strong>OpenStreetMap Overpass API</strong>. I developed an engine that builds dynamic queries to fetch spatial data (nodes and ways) based on Area ID and specific tags. To optimize performance, coordinate transformations and data cleaning are handled directly on the server before the result is sent to the client.',
         'heatmap.s3.title': 'Pattern Recognition with DBSCAN',
@@ -202,7 +215,18 @@
         'heatmap.s4.desc': 'To make the data understandable to the user, a module for <strong>Reverse Geocoding</strong> was implemented using Nominatim. Each mathematical cluster is translated into an actual street name or neighborhood. The end result is a clickable list where the user can "fly" (map.flyTo) to the hottest areas, creating a seamless connection between raw data, algorithm and user interface.',
         'heatmap.imgAlt.code': 'Python Flask backend code',
         'heatmap.imgAlt.dbscan': 'DBSCAN clustering of coordinates',
-        'heatmap.imgAlt.search': 'Search results with street names'
+        'heatmap.imgAlt.search': 'Search results with street names',
+
+        // jobb/counter.html
+        'counter.s1.title': 'Workout logger',
+        'counter.s1.desc': 'The default mode in the app is to log a gym session. The user can then add exercises from a long list (or create their own exercises). They can then add sets, reps and weight to save all the necessary information.',
+        'counter.s2.title': 'Personal profile',
+        'counter.s2.desc': 'Every user has their own profile with personal information, such as body weight, home gym and profile picture. All of their completed sessions are also saved here.',
+        'counter.s3.title': 'Clear summary',
+        'counter.s3.desc': 'After a completed session, the user gets a summary of the session. This gives the user a quick overview of what they have just accomplished.',
+        'counter.imgAlt.log': 'Repcount',
+        'counter.imgAlt.profile': 'Repcount',
+        'counter.imgAlt.summary': 'Ongoing gym session'
     };
 
     // Swedish strings for data-i18n keys that are set dynamically by page
