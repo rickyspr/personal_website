@@ -57,7 +57,7 @@
         'edu.gpa.title': 'GPA',
         'edu.gpa.weighted': 'Weighted',
         'edu.gpa.unweighted': 'Unweighted',
-        'edu.gpa.note': 'Based on 17 courses with numeric grades',
+        'edu.gpa.note': 'Based on 18 courses with numeric grades',
 
         'edu.course.tata65': 'Discrete Mathematics',
         'edu.course.tata24': 'Linear Algebra',
@@ -80,6 +80,7 @@
         'edu.course.tsea83': 'Computer Design',
         'edu.course.tams11': 'Probability Theory and Statistics',
         'edu.course.tfya86': 'Physics',
+        'edu.course.taop33': 'Introduction to Combinatorial Optimization',
 
         'edu.subject.math': 'Mathematics',
         'edu.subject.programming': 'Programming',
