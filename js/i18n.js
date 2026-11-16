@@ -81,6 +81,7 @@
         'edu.course.tams11': 'Probability Theory and Statistics',
         'edu.course.tfya86': 'Physics',
         'edu.course.taop33': 'Introduction to Combinatorial Optimization',
+        'edu.course.tddc93': 'Software Engineering Theory',
 
         'edu.subject.math': 'Mathematics',
         'edu.subject.programming': 'Programming',
@@ -92,6 +93,7 @@
         'edu.subject.cseProg': 'Computer Engineering, Programming',
         'edu.subject.mathApplied': 'Mathematics, Applied Mathematics',
         'edu.subject.engPhysics': 'Engineering Physics',
+        'edu.subject.progPm': 'Programming, Project Management',
 
         'edu.grade.pass': 'P*',
 
